@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/pengpongpong/Clipboard-landing-page)
-- Live Site URL: [Add live site URL here]()
+- Live Site URL: [Add live site URL here](https://chic-licorice-2cbabf.netlify.app/)
 
 ## My process
 
