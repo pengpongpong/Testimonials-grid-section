@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap')
+
+$main_font: 'Barlow Semi Condensed', sans-serif
+
+$violet: hsl(263, 55%, 52%)
+$gray_blue: hsl(217, 19%, 35%)
+$dark_blue: hsl(219, 29%, 14%)
+$white: hsl(0, 0%, 100%)
+$light_gray: hsl(0, 0%, 81%)
+$light_gray_blue: hsl(210, 46%, 95%)
+
+$desktop: 500px
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body
+    display: grid
+    place-content: center
+    min-height: 100vh
+    background-color: $light_gray_blue
+    font-family: $main_font
+
+main
+    margin: 0 1.5rem
+    @media screen and ( min-width: $desktop )
+        margin: 0 14em
+        max-width: 1500px
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: auto
+        gap: 2em
+
+.testimonial_headline
+    font-size: 1.25rem
+    font-weight: 600
+    margin: 1rem 0
+    @media screen and ( min-width: $desktop )
+        font-size: 1.7em
+        margin: 1em 0
+
+.testimonial_text
+    font-size: .8rem
+    color: $light_gray
+    line-height: 1.1rem
+    opacity: 70%
+    @media screen and ( min-width: $desktop )
+        font-size: 1.1em
+        line-height: 1.5rem
+
+figcaption
+    display: flex
+    align-items: center
+    gap: 1rem
+    img
+        border-radius: 50%
+        width: 2rem
+    div
+        p
+            margin: .1rem 0
+    @media screen and ( min-width: $desktop )
+        gap: 1.5em
+    img
+        width: 3em
+    div
+        p
+            margin: .3em 0
+
+.person
+    font-size: .8rem
+    color: $light_gray
+    @media screen and ( min-width: $desktop )
+        font-size: 1em
+
+.verified
+    font-size: .7rem
+    color: $light_gray
+    opacity: 50%
+    @media screen and ( min-width: $desktop )
+        font-size: .9em
+
+.testimonial
+    padding: 2rem
+    border-radius: 10px
+    margin: 1.5rem 0
+    &:nth-child(1)
+        background: $violet url("images/bg-pattern-quotation.svg") top right 1.5rem no-repeat
+        .testimonial_headline
+            color: $light_gray_blue
+            width: 98.5%
+        figcaption
+            img
+                border: .2rem solid lighten($violet, 10%)
+    &:nth-child(2)
+        background-color: $gray_blue
+        .testimonial_headline
+            color: $light_gray_blue
+    &:nth-child(3)
+        background-color: $white
+        .person, .verified, .testimonial_headline, .testimonial_text
+            color: $gray_blue
+        .verified
+            opacity: 50%
+        .testimonial_text
+            opacity: 70%
+    &:nth-child(4)
+        background-color: $dark_blue
+        .testimonial_headline
+            color: $light_gray_blue
+        .testimonial_text
+            width: 98%
+        figcaption
+            img
+                border: .2rem solid lighten($violet, 10%)
+    &:nth-child(5)
+        background-color: $white
+        .person, .verified, .testimonial_headline, .testimonial_text
+            color: $gray_blue
+        .testimonial_text
+            width: 98%
+    @media screen and ( min-width: $desktop )
+        margin: 0
+        &:nth-child(1)
+            background: $violet url("images/bg-pattern-quotation.svg") top right 7em no-repeat
+            background-size: 19%
+            grid-column: 1 / 3
+            grid-row: 1 / 2
+        &:nth-child(2)
+            grid-column: 3 / 4
+            grid-row: 1 / 2
+        &:nth-child(3)
+            grid-column: 1 / 2
+            grid-row: 2 / 3
+            .testimonial_headline
+                width: 90%
+        &:nth-child(4)
+            grid-column: 2 / 4
+            grid-row: 2 / 3
+        &:nth-child(5)
+            grid-column: 4 / 5
+            grid-row: span 3
